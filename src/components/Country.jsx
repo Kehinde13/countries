@@ -21,7 +21,7 @@ const StyledSpan = styled('span')({
 
 
 function Country() {
-    const [country, setCountry] = useState([])
+    const [singleCountry, setSingleCountry] = useState([])
     const { name } = useParams(); //to access the name from the browser address bar
 
     useEffect(() => {
@@ -29,24 +29,22 @@ function Country() {
             try {
                 const res = await fetch(`https://restcountries.com/v3.1/name/${name}`)
                 const data = await res.json()
-                setCountry(data)
+                setSingleCountry(data)
             } catch (error) {
                 console.log(error);
             }
-        }
-        getCountry()
+        };
+
+        getCountry();
+        
     }, [name])
 
     useEffect(() => {
         document.title = `${name}`;
       }, [name]);
 
-
     return (
-        <Box 
-            /* sx={{
-                height: {md:'600px'} 
-            }} */>
+        <Box>
             <Link to='/' style={{ textDecoration: "none" }}>
                 <Button
                     variant="contained"
@@ -62,7 +60,8 @@ function Country() {
             </Link>
 
             <Box mt={3} sx={{ ml: { xs: 2, md: 20 } }}>
-                {country.map((item) => (
+                {Array.isArray(singleCountry) ? 
+                  singleCountry.map((item) => (
                     <Grid container key={item.population}>
                         <Grid item md={6} >
                             <Card sx={{ maxWidth: 500 }} >
@@ -139,7 +138,7 @@ function Country() {
                             </Box>
                         </Grid>
                     </Grid>
-                ))}
+                )) : null}
             </Box>
         </Box>
 
