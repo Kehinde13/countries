@@ -1,6 +1,6 @@
 {
-  "name": "countries",
   "homepage": "http://Kehinde13.github.io/countries",
+  "name": "countries",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

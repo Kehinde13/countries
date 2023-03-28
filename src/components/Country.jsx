@@ -45,7 +45,7 @@ function Country() {
 
     return (
         <Box>
-            <Link to='/' style={{ textDecoration: "none" }}>
+            <Link to='/countries' style={{ textDecoration: "none" }}>
                 <Button
                     variant="contained"
                     startIcon={<ArrowBack />}
@@ -59,7 +59,11 @@ function Country() {
                 </Button>
             </Link>
 
-            <Box mt={3} sx={{ ml: { xs: 2, md: 20 } }}>
+            <Box mt={3} 
+            sx={{
+                 ml: { md: 20 },
+                 mx: 1
+                 }}>
                 {Array.isArray(singleCountry) ? 
                   singleCountry.map((item) => (
                     <Grid container key={item.population}>

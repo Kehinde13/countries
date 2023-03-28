@@ -158,7 +158,8 @@ function Body() {
           
             <Grid container spacing={2} mt={2}>
               {countries.map((country) => (
-                <Grid item xs={12} md={3} mt={5} key={country.name.common}>
+                <Grid item xs={12} md={3} mt={5} mx={'auto'} 
+                 key={country.name.common}>
                   <Cards {...country} />
                 </Grid>
               ))}

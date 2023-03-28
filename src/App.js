@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Body from './components/Body';
 import Navbar from "./components/Navbar";
-import Error from './components/Error';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
 import Country from './components/Country';
 
@@ -33,8 +32,7 @@ function App() {
          mode={mode}
         />
         <Routes>
-          <Route path='/' element={<Body />} />
-          <Route path='*' element={<Error />} />
+          <Route path='/countries' element={<Body />} />
           <Route path='/:name' element={<Country />} />
         </Routes>
         
