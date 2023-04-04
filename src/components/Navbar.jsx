@@ -1,5 +1,5 @@
-import 
-{ AppBar,  
+import{ 
+  AppBar,  
   IconButton, 
   Toolbar, 
   Typography 
@@ -12,14 +12,19 @@ import React from "react"
 
 function Navbar(props) {
 
+
   return (
     <AppBar 
      position="sticky" 
+     sx={{
+      bgcolor:"background.default",
+     }}
     >
       <Toolbar
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          color:"text.primary"
         }}
       >
         <Typography>

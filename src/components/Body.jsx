@@ -90,15 +90,6 @@ function Body() {
   return (
     <Box mx={2} bgcolor={"background.default"}>
 
-      {!countries ? (<Typography
-        variant='h6'
-        sx={{ textAlign: "center", fontWeight: "bold" }}
-      >
-        LOADING...
-      </Typography>) :
-        (
-        <section>
-
       <Box
         sx={{
           minWidth: 120,
@@ -125,6 +116,7 @@ function Body() {
             endAdornment={
               <SearchIcon
                 onClick={handleSearch}
+                cursor={"pointer"}
               />
             }
           />
@@ -154,20 +146,35 @@ function Body() {
         </FormControl>
       </Box>
 
-      
-          
-            <Grid container spacing={2} mt={2}>
-              {countries.map((country) => (
-                <Grid item xs={12} md={3} mt={5} mx={'auto'} 
-                 key={country.name.common}>
-                  <Cards {...country} />
-                </Grid>
-              ))}
-            </Grid>
-          </section>
-        )
-
-      }
+      <Grid container spacing={2} mt={2}>
+        {countries.length === 0 ? 
+          (<Typography
+            variant='h6'
+            sx={{
+              mx: "auto",
+              fontWeight: "bold"
+            }}
+          >
+            LOADING...
+          </Typography>) :
+            Array.isArray(countries) ?
+            countries.map((country) => (
+              <Grid item xs={12} md={3} mt={5} mx={'auto'}
+                key={country.name.common}>
+                <Cards {...country} />
+              </Grid>
+            ))
+          : (<Typography
+            variant='h6'
+            sx={{
+              mx: "auto",
+              fontWeight: "bold"
+            }}
+          >
+            Country does not exist
+          </Typography>)
+        }
+      </Grid>
     </Box>
   )
 }

@@ -1,4 +1,12 @@
-import { CardActionArea, CardContent, CardMedia, Typography, Card, ListItem, List } from '@mui/material'
+import { 
+  CardActionArea, 
+  CardContent, 
+  CardMedia, 
+  Typography, 
+  Card, 
+  ListItem, 
+  List 
+} from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
