@@ -24,7 +24,7 @@ function App() {
       <Box 
         bgcolor={"background.default"} 
         color={"text.primary"} 
-        minHeight={'650px'}
+        minHeight={'100vh'}
       >
       
         <Navbar 
