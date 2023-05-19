@@ -82,13 +82,12 @@ function Body() {
   }
 
   const handleFilter = (e) => {
-    e.preventDefault(
-      getFiltered()
-    )
+    e.preventDefault()
+      getFiltered() 
   }
 
   return (
-    <Box mx={2} bgcolor={"background.default"}>
+    <Box bgcolor={"background.default"}>
 
       <Box
         sx={{
@@ -148,18 +147,11 @@ function Body() {
 
       <Grid container spacing={2} mt={2}>
         {countries.length === 0 ? 
-          (<Typography
-            variant='h6'
-            sx={{
-              mx: "auto",
-              fontWeight: "bold"
-            }}
-          >
-            LOADING...
-          </Typography>) :
+          (<div className='loader'></div>) :
             Array.isArray(countries) ?
             countries.map((country) => (
-              <Grid item xs={12} md={3} mt={5} mx={'auto'}
+              <Grid item xs={12} md={3} mt={5} 
+                className='grid'
                 key={country.name.common}>
                 <Cards {...country} />
               </Grid>

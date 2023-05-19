@@ -22,9 +22,9 @@ function App() {
     <BrowserRouter>
     <ThemeProvider theme={darkTheme}>
       <Box 
-      bgcolor={"background.default"} 
-      color={"text.primary"} 
-      minHeight={'650px'}
+        bgcolor={"background.default"} 
+        color={"text.primary"} 
+        minHeight={'650px'}
       >
       
         <Navbar 
@@ -33,7 +33,7 @@ function App() {
         />
         <Routes>
           <Route path='/countries' element={<Body />} />
-          <Route path='/:name' element={<Country />} />
+          <Route path='/:name' element={<Country />} /> {/* /:name to set the name of the country from address bar */}
         </Routes>
         
       </Box>
